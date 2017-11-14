@@ -1,4 +1,4 @@
-#' Retrieves state/territory-level influenza statistics from the CDC
+#' Retrieves state/territory-level influenza statistics from the CDC (deprecated)
 #'
 #' Uses the data source from the CDC' State-levelFluView
 #' \url{https://gis.cdc.gov/grasp/fluview/main.html} and provides state flu
@@ -18,13 +18,22 @@
 #'       is not due to a large download size, but the time it takes for their
 #'       servers to crunch the data. Wrap the function call in \code{httr::with_verbose}
 #'       if you would like to see what's going on.
-#' @examples \dontrun{
+#' @examples 
 #' get_state_data(2014)
+#' \dontrun{
 #' get_state_data(c(2013, 2014))
 #' get_state_data(2010:2014)
 #' httr::with_verbose(get_state_data(2009:2015))
 #' }
 get_state_data <- function(years=as.numeric(format(Sys.Date(), "%Y"))) {
+
+  message(
+    paste0(
+      c("This function has been deprecated and will be removed in future releases.",
+        "Use ili_weekly_activity_indicators() instead."),
+      collapse="\n"
+    )
+  )
 
   if (any(years < 2008))
     stop("Error: years should be >= 2008")
@@ -36,14 +45,13 @@ get_state_data <- function(years=as.numeric(format(Sys.Date(), "%Y"))) {
 
   stop_for_status(tmp)
 
+  # the API doesn't return actual JSON. It returns a JavaScript data structre
+  # which is why we need the assistance of the super handy V8 pkg.
+
   res <- httr::content(tmp, as="parsed")
+  res <- jsonlite::fromJSON(res)
 
-  ctx <- V8::v8()
-  ctx$eval(V8::JS(sprintf("var dat=%s;", res)))
-  res <- ctx$get("dat", flatten=FALSE)
   out <- suppressMessages(readr::type_convert(res$datadownload))
-
-  class(out) <- c("cdcstatedata", class(out))
 
   out
 

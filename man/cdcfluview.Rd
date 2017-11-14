@@ -4,16 +4,15 @@
 \name{cdcfluview}
 \alias{cdcfluview}
 \alias{cdcfluview-package}
-\title{Retrieve Flu Season Data from the CDC FluView Portal}
+\title{Retrieve 'U.S'.' Flu Season Data from the 'CDC' 'FluView' Portal}
 \description{
 The U.S. Centers for Disease Control (CDC) maintains a portal
-\code{https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html} for
+\url{http://gis.cdc.gov/grasp/fluview/fluportaldashboard.html} for
 accessing state, regional and national influenza statistics as well as
-Mortality Surveillance Data. The Flash interface makes it difficult
-and time-consuming to select and retrieve influenza data. This package
-provides functions to access the data provided by portal's underlying API.
+Mortality Surveillance Data. The Flash interface makes it difficult and
+time-consuming to select and retrieve influenza data. This package
+provides functions to access the data provided by the portal's underlying API.
 }
 \author{
 Bob Rudis (bob@rud.is)
 }
-

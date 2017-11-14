@@ -1,4 +1,4 @@
-#' Retrieves (high-level) weekly influenza surveillance report from the CDC
+#' Retrieves (high-level) weekly (XML) influenza surveillance report from the CDC
 #'
 #' The CDC publishes a \href{https://www.cdc.gov/flu/weekly/usmap.htm}{weekly
 #' influenza report} detailing high-level flu activity per-state. They also
@@ -20,14 +20,14 @@
 get_weekly_flu_report <- function() {
 
   # grab the report
-  doc <- read_xml("https://www.cdc.gov/flu/weekly/flureport.xml")
+  doc <- xml2::read_xml("https://www.cdc.gov/flu/weekly/flureport.xml")
 
   # extract the time periods
-  periods <- xml_attrs(xml_find_all(doc, "timeperiod"))
+  periods <- xml2::xml_attrs(xml2::xml_find_all(doc, "timeperiod"))
 
   # for each period extract the state information and
   # shove it all into a data frame
-  pb <- progress_estimated(length(periods))
+  pb <- dplyr::progress_estimated(length(periods))
   purrr::map_df(periods, function(period) {
 
     pb$tick()$print()
@@ -35,19 +35,21 @@ get_weekly_flu_report <- function() {
     tp <- sprintf("//timeperiod[@number='%s' and @year='%s']",
                   period["number"], period["year"])
 
-    weeks <- xml_find_first(doc, tp)
-    kids <- xml_children(weeks)
+    weeks <- xml2::xml_find_first(doc, tp)
+    kids <- xml2::xml_children(weeks)
 
-    abbrev <- xml_text(xml_find_all(kids, "abbrev"), TRUE)
-    color <- xml_text(xml_find_all(kids, "color"), TRUE)
-    label <- xml_text(xml_find_all(kids, "label"), TRUE)
+    abbrev <- xml2::xml_text(xml2::xml_find_all(kids, "abbrev"), TRUE)
+    color <- xml2::xml_text(xml2::xml_find_all(kids, "color"), TRUE)
+    label <- xml2::xml_text(xml2::xml_find_all(kids, "label"), TRUE)
 
-    data_frame(year=period["year"],
-               week_number=period["number"],
-               state=abbrev,
-               color=color,
-               label=label,
-               subtitle=period["subtitle"])
+    dplyr::data_frame(
+      year = period["year"],
+      week_number = period["number"],
+      state = abbrev,
+      color = color,
+      label = label,
+      subtitle = period["subtitle"]
+    )
 
   }) -> out
 
