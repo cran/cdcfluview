@@ -5,9 +5,10 @@
 # @author Jarad Niemi \email{niemi@@iastate.edu}
 .start_date = function(year) {
   # Finds start state for this calendar year
-  jan1 = as.Date(paste(year, '-01-01', sep=''))
-  wday = as.numeric(MMWRweekday(jan1))
-  jan1 - (wday-1) + 7*(wday>4)
+  # Fix by @bastistician
+  jan1 <- as.Date(paste0(year, '-01-01'))
+  wday <- as.numeric(strftime(jan1, "%w"))  # Sunday is 0
+  jan1 - wday + 7*(wday>3)
 }
 
 # I discovered why 1962!: https://www.cdc.gov/mmwr/preview/mmwrhtml/su6004a9.htm
@@ -52,7 +53,7 @@ NULL
 #' @return data frame (tibble)
 #' @export
 #' @examples
-#' mmwr_week(Sys.Date())
+#' mwk <- mmwr_week(Sys.Date())
 mmwr_week <- function(x) {
   x <- as.Date(x)
   x <- setNames(MMWRweek::MMWRweek(x), c("mmwr_year", "mmwr_week", "mmwr_day"))
@@ -75,7 +76,7 @@ mmwr_week <- function(x) {
 #' @return ordered factor
 #' @export
 #' @examples
-#' mmwr_weekday(Sys.Date())
+#' mwday <- mmwr_weekday(Sys.Date())
 mmwr_weekday <- function(x, abbr = FALSE) {
   x <- as.Date(x)
   x <- MMWRweek::MMWRweekday(x)
@@ -102,7 +103,7 @@ mmwr_weekday <- function(x, abbr = FALSE) {
 #' @return vector of `Date` objects
 #' @export
 #' @examples
-#' mmwr_week_to_date(2016,10,3)
+#' mwd <- mmwr_week_to_date(2016,10,3)
 mmwr_week_to_date <- function(year, week, day=NULL) {
 
   year <- as.numeric(year)

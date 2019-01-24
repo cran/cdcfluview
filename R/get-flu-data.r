@@ -30,9 +30,6 @@
 #'       servers to crunch the data. Wrap the function call in \code{httr::with_verbose}
 #'       if you would like to see what's going on.
 #' @export
-#' @examples \dontrun{
-#' flu <- get_flu_data("hhs", 1:10, c("who", "ilinet"), years=2000:2014)
-#' }
 get_flu_data <- function(region="hhs", sub_region=1:10,
                          data_source="ilinet",
                          years=as.numeric(format(Sys.Date(), "%Y"))) {
@@ -84,7 +81,7 @@ get_flu_data <- function(region="hhs", sub_region=1:10,
                                                   "New York City",
                                                   "Los Angeles")),
                                 num = 1:57,
-                                stringsAsFactors = F)
+                                stringsAsFactors = FALSE)
 
       sub_region_inpt <- state_match$num[state_match$state %in% sub_region]
 
