@@ -1,4 +1,4 @@
-99b30e6755a2edeb0b90f50c29f43266 *DESCRIPTION
+59dd987669f63dd67c67b5e9a54fd435 *DESCRIPTION
 17e737ea5a3bb1dbab386d53092683a8 *LICENSE
 bee5c6693bd97686d7fecc92956a140f *NAMESPACE
 a693f2211a61e968f646b515a2e271e7 *R/aaa.R
@@ -25,20 +25,6 @@ f05f448a1daaf2811442b365913ebfa5 *R/zzz.r
 e3ea6546a0dbd72c8a3308dde1693fdb *man/cdc_basemap.Rd
 e0012af7bf7811c6190e35cfb3ab0f06 *man/cdcfluview.Rd
 7fdeb87849731c6a40cbb5a97400d435 *man/census_regions.Rd
-fe842f7ca645e2423d5aa112bd750190 *man/figures/README-cdc-basemaps-1.png
-1c320815dfca9b5b4f758fe1f199ade8 *man/figures/README-cdc-basemaps-2.png
-8bf4afac98c3e0b794e27c45baed2737 *man/figures/README-cdc-basemaps-3.png
-dd8d8b2c0573a306889d57db8054123a *man/figures/README-cdc-basemaps-4.png
-070f8c3e57e8e29849cbbcbf9f017af9 *man/figures/README-cdc-basemaps-5.png
-d1831710fe783c2be90b8bf7f8544ba5 *man/figures/README-cdc-basemaps-6.png
-2d47ba09ab72e8f3497fda0b6038e6d8 *man/figures/README-ili-df-1.png
-ee6a628b4fcd9448630c62bb5c241f2c *man/figures/README-ili-df-2.png
-ca34542dc1e10ac7010107bb3006aada *man/figures/README-ili-df-3.png
-e72e2382fad1e144121932de85f332b2 *man/figures/README-ili-df-4.png
-61f1b331ad4d9247fce689f401aba3f8 *man/figures/README-ili-weekly-activity-1.png
-0716c28286a869b43f50e6eb2736f42d *man/figures/README-nat-pi-mortality-1.png
-cdb1041370455fb7320ece1401a95897 *man/figures/README-surveillance-areas-1.png
-d2d5307a6dcbe670b88454a56822661c *man/figures/README-who-vrevss-1.png
 4251f853538502cda64f13a2ec5f8174 *man/geographic_spread.Rd
 89564e261cc621d23391da5c453151d1 *man/get_flu_data.Rd
 703a35768b0d908c987846f36e3db862 *man/get_hosp_data.Rd
@@ -57,4 +43,4 @@ f0334756288fc4b9dd2bdf3f257ab793 *man/state_data_providers.Rd
 e367f9cf3fb9aec430484558c99ed9cb *man/surveillance_areas.Rd
 5bc812b7388bcea240352d9ed7d4b5e2 *man/who_nrevss.Rd
 dc13b851f5e851249a34cd9869970582 *tests/test-all.R
-bd823049264595c5fa34e29d53c30f08 *tests/testthat/test-cdcfluview.R
+0d40376b462ab6c2fd9c0b1ca218341e *tests/testthat/test-cdcfluview.R
