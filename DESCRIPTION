@@ -3,8 +3,8 @@ Type: Package
 Encoding: UTF-8
 Title: Retrieve Flu Season Data from the United States Centers for
         Disease Control and Prevention ('CDC') 'FluView' Portal
-Version: 0.9.3
-Date: 2021-02-27
+Version: 0.9.4
+Date: 2021-05-22
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640")),
@@ -16,7 +16,8 @@ Authors@R: c(
            comment = c(ORCID = "0000-0002-1791-9449")),
     person("James", "Turtle", email = "jturtle@predsci.com", role = "ctb",
            comment = c(ORCID = "0000-0003-0735-7769")),
-    person("Andrew", "Bates", role = "ctb")
+    person("Andrew", "Bates", role = "ctb"),
+    person("Ian", "McGovern", role = "ctb")
   )
 Maintainer: Bob Rudis <bob@rud.is>
 Description: The 'U.S.' Centers for Disease Control and Prevention (CDC) maintain
@@ -35,12 +36,13 @@ Imports: httr, progress, tools, dplyr, jsonlite, tibble, stats, utils,
         sf, xml2, purrr, readr, MMWRweek, units (>= 0.4-6)
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2021-02-27 08:01:59 UTC; hrbrmstr
+Packaged: 2021-05-22 12:01:26 UTC; hrbrmstr
 Author: Bob Rudis [aut, cre] (<https://orcid.org/0000-0001-5670-2640>),
   Craig McGowan [ctb] (<https://orcid.org/0000-0002-6298-0185>),
   JJ Chen [ctb] (<https://orcid.org/0000-0001-8482-8398>),
   Sebastian Meyer [ctb] (<https://orcid.org/0000-0002-1791-9449>),
   James Turtle [ctb] (<https://orcid.org/0000-0003-0735-7769>),
-  Andrew Bates [ctb]
+  Andrew Bates [ctb],
+  Ian McGovern [ctb]
 Repository: CRAN
-Date/Publication: 2021-02-27 08:20:02 UTC
+Date/Publication: 2021-05-22 12:20:02 UTC

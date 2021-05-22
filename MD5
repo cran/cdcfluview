@@ -1,8 +1,8 @@
-59dd987669f63dd67c67b5e9a54fd435 *DESCRIPTION
+f5ed232fbec7f01c78351b279f7de887 *DESCRIPTION
 17e737ea5a3bb1dbab386d53092683a8 *LICENSE
 bee5c6693bd97686d7fecc92956a140f *NAMESPACE
 a693f2211a61e968f646b515a2e271e7 *R/aaa.R
-e0e7c4a93517a6e63a7d91124d4e284b *R/agd-ipt.r
+fae94b003d3f74dd03c805cbb8a0886d *R/agd-ipt.r
 96d66860ef5e5f0eccba0e2e4f5403f2 *R/cdcfluview-package.R
 26589b9a180a2ef640aa56918f91f7fa *R/coverage-map.r
 bb4ce5e8efe056e8e66644600fcb998f *R/datasets.r
@@ -11,7 +11,7 @@ bb4ce5e8efe056e8e66644600fcb998f *R/datasets.r
 62fba30288b2b22bb6a652efcacce56b *R/get-hosp-data.r
 56ba97b921cded9cdf52fdbe3bae32c1 *R/get-state-data.r
 3a0ba3bfb96d245eb38c6f65a208a6b6 *R/get-weekly-flu-report.r
-b55ee31d056f7c146c4370c5dbfacf40 *R/hospital.r
+bfdfca003fdafc5e6b8e6d28e6638f71 *R/hospital.r
 acf5b25277de236f63a36ba2094c2927 *R/ili-weekly-state.r
 3f111f4c7f37649f1aeb2d83bb4ec781 *R/ilinet.r
 7d6b30d95bda5b289e54d33f7fba2b8f *R/mmwr-map.r
@@ -43,4 +43,4 @@ f0334756288fc4b9dd2bdf3f257ab793 *man/state_data_providers.Rd
 e367f9cf3fb9aec430484558c99ed9cb *man/surveillance_areas.Rd
 5bc812b7388bcea240352d9ed7d4b5e2 *man/who_nrevss.Rd
 dc13b851f5e851249a34cd9869970582 *tests/test-all.R
-0d40376b462ab6c2fd9c0b1ca218341e *tests/testthat/test-cdcfluview.R
+a9769835201e5f0cd136dcac0e8aba5d *tests/testthat/test-cdcfluview.R
